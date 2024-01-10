@@ -1,0 +1,38 @@
+---
+title: "Stable Water Isotope Research - Results and Analysis 2021"
+author: "Emory Ellis"
+date: '2022-06-21'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Read in Sources}
+source ('WaterIso_2021.R')
+source ('SoilMoisture_2021.R')
+source('Met_2021.R')
+source ('DBH_2021.R')
+  summary(branch_iso)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+par (mfrow=c(2,2), mar=c(2,2,2,2))
+hist (soil_iso$HvSMOW, main = 'Soil HvSMOW')
+hist (soil_iso$OvSMOW, main = 'Soil OvSMOW')
+hist (branch_iso$HvSMOW, main = 'Branch HvSMOW')
+hist (branch_iso$OvSMOW, main = 'Branch OvSMOW')
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
